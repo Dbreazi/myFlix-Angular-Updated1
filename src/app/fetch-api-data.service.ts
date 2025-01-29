@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-// Declaring the API URL that will provide data for the client app
+
 const apiUrl = 'https://strobeapp-583fefccfb94.herokuapp.com';
 
 @Injectable({
@@ -14,19 +14,23 @@ export class FetchApiDataService {
 
   // User Registration
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
-    return this.http.post(apiUrl + '/users', userDetails).pipe(
+    return this.http.post(apiUrl + '/users', userDetails, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }) 
+    }).pipe(
       catchError(this.handleError)
     );
-  }
+  }  
 
   // User Login
-  public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
-    return this.http.post(apiUrl + '/login', userDetails).pipe(
-      catchError(this.handleError)
-    );
-  }
+public userLogin(userDetails: any): Observable<any> {
+  console.log('Logging in with:', userDetails);
+  return this.http.post(apiUrl + '/login', userDetails, {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }) 
+  }).pipe(
+    catchError(this.handleError)
+  );
+}
+
 
   // Get All Movies
   public getAllMovies(): Observable<any> {

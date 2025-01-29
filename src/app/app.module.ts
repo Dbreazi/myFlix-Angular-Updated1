@@ -1,20 +1,42 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';  // Add this for API requests
+import { HttpClientModule } from '@angular/common/http';  // For API requests
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FetchApiDataService } from './fetch-api-data.service';
-import { AppRoutingModule } from './app-routing.module'; // Import the API service
+import { AppRoutingModule } from './app-routing.module';
+
+// Angular Material modules
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
+import { UserLoginFormComponent } from './user-login-form/user-login-form.component'; 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserRegistrationFormComponent,
+    UserLoginFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule  // Add HttpClientModule for making API requests
+    AppRoutingModule,
+    BrowserAnimationsModule, 
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    FormsModule
   ],
-  providers: [FetchApiDataService],  // Register the service
+  providers: [FetchApiDataService],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
