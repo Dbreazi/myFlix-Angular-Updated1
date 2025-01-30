@@ -21,15 +21,16 @@ export class FetchApiDataService {
     );
   }  
 
-  // User Login
-public userLogin(userDetails: any): Observable<any> {
-  console.log('Logging in with:', userDetails);
-  return this.http.post(apiUrl + '/login', userDetails, {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }) 
-  }).pipe(
-    catchError(this.handleError)
-  );
-}
+  public userLogin(userDetails: any): Observable<any> {
+    console.log('Logging in with:', userDetails);
+    return this.http.post(apiUrl + '/login', userDetails, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }) 
+    }).pipe(
+      catchError(this.handleError)
+    );
+  }
+  
+
 
 
   // Get All Movies

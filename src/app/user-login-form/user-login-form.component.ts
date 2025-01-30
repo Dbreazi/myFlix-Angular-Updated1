@@ -25,9 +25,9 @@ export class UserLoginFormComponent implements OnInit {
     this.fetchApiData.userLogin(this.userData).subscribe((response) => {
       console.log('User logged in:', response);
 
-      // Store user data & token in localStorage
-      localStorage.setItem('user', response.user.Username);
-      localStorage.setItem('token', response.token);
+      // ✅ Store user data & token in localStorage properly
+      localStorage.setItem('user', JSON.stringify(response.user)); // Store full user object
+      localStorage.setItem('token', response.token); // Store token
 
       // Close dialog & show success message
       this.dialogRef.close();
@@ -36,6 +36,8 @@ export class UserLoginFormComponent implements OnInit {
       });
     }, (error) => {
       console.error('Login failed:', error);
+
+      // Show user-friendly error message
       this.snackBar.open('Invalid username or password', 'OK', {
         duration: 2000
       });
