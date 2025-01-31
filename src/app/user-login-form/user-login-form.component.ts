@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login-form',
@@ -15,29 +16,31 @@ export class UserLoginFormComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar,
+    private router: Router  // Removed incorrect comma before this line
+  ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   // This function handles user login
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((response) => {
       console.log('User logged in:', response);
-
-      // ✅ Store user data & token in localStorage properly
-      localStorage.setItem('user', JSON.stringify(response.user)); // Store full user object
-      localStorage.setItem('token', response.token); // Store token
-
-      // Close dialog & show success message
+      
+      // Store user data & token in localStorage
+      localStorage.setItem('user', response.user.Username);
+      localStorage.setItem('token', response.token);
+      
+      // Close dialog & navigate to movies page
       this.dialogRef.close();
+      this.router.navigate(['movies']); // Redirect after login
+      
+      // Show success message
       this.snackBar.open('Login successful!', 'OK', {
         duration: 2000
       });
     }, (error) => {
       console.error('Login failed:', error);
-
-      // Show user-friendly error message
       this.snackBar.open('Invalid username or password', 'OK', {
         duration: 2000
       });

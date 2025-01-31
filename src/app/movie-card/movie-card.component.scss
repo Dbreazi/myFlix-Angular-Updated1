@@ -1,0 +1,36 @@
+mat-dialog-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh; /* Prevents dialog from exceeding viewport height */
+    overflow: hidden; /* Prevents unintended scrolling */
+  }
+  
+  mat-dialog-content {
+    max-height: 70vh; /* Allows scrolling inside the dialog */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Ensure movie cards stack properly */
+  mat-card {
+    max-width: 300px;
+    margin: 16px auto;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  mat-card img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Prevent background scrolling */
+  .cdk-overlay-container {
+    overflow: hidden !important; /* Prevents main page from scrolling */
+  }
+  
