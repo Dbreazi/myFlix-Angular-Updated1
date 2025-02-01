@@ -14,14 +14,14 @@ export class WelcomePageComponent {
   // Opens the registration dialog
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
-      width: '280px'
+      width: '400px'
     });
   }
 
   // Opens the login dialog
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
-      width: '280px'
+      width: '400px'
     });
   }
 }

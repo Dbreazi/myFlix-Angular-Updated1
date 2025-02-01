@@ -30,21 +30,24 @@ export class MovieCardComponent implements OnInit {
   openGenreDialog(genre: any): void {
     this.dialog.open(GenreDialogComponent, {
       data: { genre },
-      width: '400px'
+      width: '450px',
+      maxHeight: '90vh'
     });
   }
   
   openDirectorDialog(director: any): void {
     this.dialog.open(DirectorDialogComponent, {
       data: { director },
-      width: '400px'
+      width: '450px',
+      maxHeight: '90vh'
     });
   }
   
   openMovieDetailsDialog(movie: any): void {
     this.dialog.open(MovieDetailsDialogComponent, {
       data: { movie },
-      width: '400px'
+      width: '450px',
+      maxHeight: '90vh'
     });
   }
   

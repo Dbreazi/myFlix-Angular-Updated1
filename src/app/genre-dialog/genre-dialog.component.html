@@ -1,4 +1,7 @@
-<h2>{{ data.genre.Name }}</h2>
-<p>{{ data.genre.Description }}</p>
-<button mat-raised-button color="primary" mat-dialog-close>Close</button>
+<h2 class="dialog-title">{{ data.genre.Name }}</h2>
 
+<div class="dialog-content">
+  <p class="description-text">{{ data.genre.Description }}</p>
+</div>
+
+<button mat-raised-button class="dialog-close-btn" mat-dialog-close>Close</button>

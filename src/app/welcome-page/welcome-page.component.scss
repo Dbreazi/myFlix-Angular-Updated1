@@ -1,0 +1,68 @@
+/* Full-Screen Layout with Top Alignment */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content towards the top */
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+    padding: 40px 20px; /* Add padding at the top and sides */
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  /* Create space at the top to push content into the upper third */
+  .welcome-container::before {
+    content: '';
+    display: block;
+    height: 20vh; /* Adjust this value to control spacing */
+  }
+  
+  /* Welcome Title */
+  .welcome-title {
+    font-size: 36px;
+    color: #1976d2;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Button Group */
+  .button-group {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Button Styling */
+  .welcome-btn {
+    background-color: #1976d2;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  
+    &:hover {
+      background-color: #1565c0;
+      color: #d9e4f5;
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 480px) {
+    .welcome-title {
+      font-size: 28px;
+    }
+  
+    .welcome-btn {
+      padding: 10px;
+    }
+  
+    .welcome-container::before {
+      height: 10vh; /* Less spacing on smaller screens */
+    }
+  }
+  

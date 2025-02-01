@@ -1,0 +1,60 @@
+/* Force Override Angular Material Defaults */
+::ng-deep mat-dialog-container {
+    padding: 24px !important;  /* Force padding inside the dialog */
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    max-width: 400px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    gap: 16px !important; /* Space between elements */
+  }
+  
+  /* Dialog Title */
+  .dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+    color: #1976d2;
+    width: 100%;
+  }
+  
+  /* Dialog Content */
+  .dialog-content {
+    text-align: center;
+    padding: 16px !important;  /* Add padding around the text */
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Close Button Styling */
+  .dialog-close-btn {
+    background-color: #1976d2 !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    font-weight: bold;
+    width: 80% !important;
+    max-width: 200px;
+    margin: 16px auto 0 !important;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block !important;
+    text-align: center;
+  }
+  
+  /* Button Hover Effect */
+  .dialog-close-btn:hover {
+    background-color: #1565c0 !important;
+    transform: scale(1.05) !important;
+    cursor: pointer;
+  }
+  

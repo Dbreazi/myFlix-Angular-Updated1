@@ -1,39 +1,42 @@
-<mat-card>
-    <mat-card-header>
-      <mat-card-title>Login</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <form>
-        <mat-form-field>
-          <input
-            matInput
-            [(ngModel)]="userData.Username"
-            placeholder="Username"
-            type="text"
-            name="Username"
-            required
-          >
-        </mat-form-field>
-        <mat-form-field>
-          <input
-            matInput
-            [(ngModel)]="userData.Password"
-            type="password"
-            placeholder="Password"
-            name="Password"
-            required
-          >
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-    <mat-card-actions>
-        <button
-          mat-raised-button
-          (click)="loginUser()"
-          color="primary"
-        >
-          Login
-        </button>
-    </mat-card-actions>
-  </mat-card>
-  
+<mat-card class="dialog-container">
+  <mat-card-header>
+    <mat-card-title class="dialog-title">Login</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form>
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          [(ngModel)]="userData.Username"
+          placeholder="Enter your username"
+          type="text"
+          name="Username"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [(ngModel)]="userData.Password"
+          placeholder="Enter your password"
+          type="password"
+          name="Password"
+          required
+        />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions class="action-buttons">
+    <button mat-raised-button class="action-button" (click)="loginUser()"> <!-- or registerUser() -->
+      Login
+    </button>
+    <button mat-raised-button class="dialog-close-btn" mat-dialog-close>
+      Close
+    </button>
+  </mat-card-actions>
+</mat-card>

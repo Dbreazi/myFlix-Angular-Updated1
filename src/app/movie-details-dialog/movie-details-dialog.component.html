@@ -1,5 +1,9 @@
-<h2>{{ data.movie.Title }}</h2>
-<p>{{ data.movie.Description }}</p>
-<p><strong>Genre:</strong> {{ data.movie.Genre.Name }}</p>
-<p><strong>Director:</strong> {{ data.movie.Director.Name }}</p>
-<button mat-raised-button color="primary" mat-dialog-close>Close</button>
+<h2 class="dialog-title">{{ data.movie.Title }}</h2>
+
+<div class="dialog-content">
+  <p class="description-text">{{ data.movie.Description }}</p>
+  <p><strong>Genre:</strong> {{ data.movie.Genre.Name }}</p>
+  <p><strong>Director:</strong> {{ data.movie.Director.Name }}</p>
+</div>
+
+<button mat-raised-button class="dialog-close-btn" mat-dialog-close>Close</button>
