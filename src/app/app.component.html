@@ -1,2 +1,9 @@
-<router-outlet></router-outlet>
-
+<nav class="nav-bar">
+    <button mat-raised-button color="primary" routerLink="/movies">Movies</button>
+    <button mat-raised-button color="accent" routerLink="/profile">Profile</button>
+    <button mat-raised-button color="warn" (click)="logoutUser()">Logout</button>
+  </nav>
+  
+  
+  <router-outlet></router-outlet>
+  

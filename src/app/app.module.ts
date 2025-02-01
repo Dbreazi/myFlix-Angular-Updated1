@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,12 +20,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
-import { WelcomePageComponent } from './welcome-page/welcome-page.component'; 
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
+import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
+import { MovieDetailsDialogComponent } from './movie-details-dialog/movie-details-dialog.component';
 
 // Define routes
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: UserProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 
@@ -34,20 +40,25 @@ const appRoutes: Routes = [
     UserRegistrationFormComponent,
     UserLoginFormComponent,
     MovieCardComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    UserProfileComponent,
+    GenreDialogComponent, 
+    DirectorDialogComponent,
+    MovieDetailsDialogComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes), // Add RouterModule
+    RouterModule.forRoot(appRoutes),
     MatInputModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule // ✅ Fixed: Moved inside imports
   ],
   providers: [FetchApiDataService],  
   bootstrap: [AppComponent]

@@ -1,0 +1,30 @@
+<mat-card class="profile-card">
+    <mat-card-title>User Profile</mat-card-title>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="updatedUser.Username">
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" [(ngModel)]="updatedUser.Email">
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Birthday</mat-label>
+      <input matInput type="date" [(ngModel)]="updatedUser.Birthday">
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="updateUser()">Update Profile</button>
+    <button mat-raised-button color="warn" (click)="deleteUser()">Delete Account</button>
+  </mat-card>
+  
+  <!-- Display Favorite Movies -->
+  <mat-card class="favorite-movies-card">
+    <mat-card-title>Favorite Movies</mat-card-title>
+    <div *ngFor="let movie of favoriteMovies">
+      <mat-card>{{ movie.Title }}</mat-card>
+    </div>
+  </mat-card>
+  
