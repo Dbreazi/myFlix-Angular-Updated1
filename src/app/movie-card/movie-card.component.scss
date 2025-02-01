@@ -1,36 +1,119 @@
-mat-dialog-container {
-    display: flex;
-    flex-direction: column;
-    max-height: 90vh; /* Prevents dialog from exceeding viewport height */
-    overflow: hidden; /* Prevents unintended scrolling */
+/* General Layout */
+.movie-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  margin: 20px;
+  justify-content: flex-start;
+  background-color: #f0f2f5; /* Light background for contrast */
+}
+
+/* Movie Card Design */
+mat-card {
+  flex: 0 0 auto;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Softer shadow */
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px); /* Lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
-  
-  mat-dialog-content {
-    max-height: 70vh; /* Allows scrolling inside the dialog */
-    overflow-y: auto; /* Enables vertical scrolling */
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+/* Movie Image Styling */
+mat-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* Better scaling while filling the space */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: transform 0.3s ease;
+
+  mat-card:hover & {
+    transform: scale(1.05); /* Slight zoom on hover */
   }
-  
-  /* Ensure movie cards stack properly */
-  mat-card {
-    max-width: 300px;
-    margin: 16px auto;
-    text-align: center;
+}
+
+/* Action Buttons */
+mat-card-actions {
+  display: flex;
+  justify-content: space-around;
+  gap: 6px;
+  padding: 10px;
+  flex-wrap: wrap;
+  background-color: #fafafa;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Button Styles */
+button {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e3f2fd;
+  }
+}
+
+/* Movie Title Styling */
+.movie-title {
+  text-align: center;
+  padding: 12px 8px;
+  background-color: #ffffff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top: 1px solid #ddd;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Target the h3 specifically inside .movie-title */
+.movie-title h3 {
+  font-size: 20px;     /* Set the font size */
+  font-weight: bold;   /* Set the font weight */
+  margin: 0;           /* Remove default margins */
+  color: #333;         /* Ensure text color is consistent */
+}
+
+/* Favorite Icon */
+mat-icon {
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #ff4081; /* Hot pink hover */
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .movie-container {
+    gap: 10px;
     padding: 10px;
   }
-  
+
+  mat-card {
+    width: 180px;
+  }
+
   mat-card img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
+    height: 250px;
   }
-  
-  /* Prevent background scrolling */
-  .cdk-overlay-container {
-    overflow: hidden !important; /* Prevents main page from scrolling */
+
+  .movie-title {
+    font-size: 20px;
+    font-weight: bold;
   }
-  
+}

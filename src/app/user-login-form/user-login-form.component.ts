@@ -26,15 +26,19 @@ export class UserLoginFormComponent implements OnInit {
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((response) => {
       console.log('User logged in:', response);
-      
+  
       // Store user data & token in localStorage
       localStorage.setItem('user', response.user.Username);
       localStorage.setItem('token', response.token);
-      
-      // Close dialog & navigate to movies page
+  
+      // Redirect to Movies page before refreshing
+      this.router.navigate(['movies']).then(() => {
+        window.location.reload(); // Refresh to update nav visibility
+      });
+  
+      // Close dialog
       this.dialogRef.close();
-      this.router.navigate(['movies']); // Redirect after login
-      
+  
       // Show success message
       this.snackBar.open('Login successful!', 'OK', {
         duration: 2000
@@ -46,4 +50,5 @@ export class UserLoginFormComponent implements OnInit {
       });
     });
   }
+    
 }

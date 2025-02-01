@@ -1,17 +1,138 @@
+/* Container for Profile & Favorite Movies */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Full-Width User Profile Card */
 .profile-card {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+  box-sizing: border-box;
+}
+
+/* Title Alignment for User Profile and Favorite Movies */
+mat-card-title {
+  text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 16px 0; /* Consistent spacing below the title */
+  padding: 10px 0;    /* Padding for better vertical alignment */
+  color: #333;
+}
+
+
+/* Form Fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Update Profile Button Styling */
+.update-profile-btn {
+  background-color: #1976d2; /* Matches the navigation bar */
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%; /* Keeps button consistent with form fields */
+}
+
+.update-profile-btn:hover {
+  background-color: #1565c0; /* Slightly darker on hover */
+  transform: scale(1.03);
+}
+
+/* Delete Account Button Styling */
+.delete-account-btn {
+  background-color: #d24848; /* Lighter red than the default warn button */
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  margin-top: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.delete-account-btn:hover {
+  background-color: #d32f2f; /* Slightly darker red on hover */
+  transform: scale(1.03);
+}
+
+
+/* Favorite Movies Section */
+.favorite-movies-card {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Favorite Movies Grid */
+.favorite-movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Movie Cards Matching the Movie View */
+.favorite-movie-card {
+  width: 250px;
+  text-align: center;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  position: relative; /* Needed for positioning the trash icon */
+
+  &:hover {
+    transform: scale(1.05);
   }
-  
-  .favorite-movies-card {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-  }
-  
-  button {
-    margin-right: 10px;
-    margin-top: 10px;
-  }
-  
+}
+
+.favorite-movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  position: relative; /* For icon positioning */
+}
+
+/* Movie Title */
+.favorite-movie-card h3 {
+  font-size: 20px;
+  margin: 8px 0;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Trash Icon Positioned on Image (Top-Right Corner) */
+.trash-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: 50%;
+  padding: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  z-index: 10; /* Make sure it's above the image */
+}
+
+.trash-icon:hover {
+  background-color: rgba(255, 0, 0, 0.9); /* Red on hover */
+  color: white;
+  transform: scale(1.1);
+}

@@ -11,8 +11,12 @@ export class AppComponent {
 
   constructor(private router: Router) {}
 
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
   logoutUser(): void {
-    localStorage.clear(); // Clears user data and token
-    this.router.navigate(['welcome']); // Redirects to the welcome page
+    localStorage.clear();
+    this.router.navigate(['welcome']);
   }
 }

@@ -40,11 +40,16 @@ export class UserProfileComponent implements OnInit {
   }
 
   getFavoriteMovies(): void {
-    if (!this.user || !this.user.FavoriteMovies) return;
-    this.fetchApiData.getAllMovies().subscribe((movies: any[]) => {
-      this.favoriteMovies = movies.filter(movie => this.user.FavoriteMovies.includes(movie._id));
+    const username = localStorage.getItem('user');
+    if (!username) return;
+  
+    this.fetchApiData.getUser(username).subscribe((user: any) => {
+      this.fetchApiData.getAllMovies().subscribe((movies: any[]) => {
+        this.favoriteMovies = movies.filter(movie => user.FavoriteMovies.includes(movie._id));
+      });
     });
   }
+  
 
   updateUser(): void {
     const username = localStorage.getItem('user');
@@ -84,7 +89,7 @@ export class UserProfileComponent implements OnInit {
   removeFromFavorites(movieId: string): void {
     const username = localStorage.getItem('user');
     if (!username) return;
-
+  
     this.fetchApiData.removeMovieFromFavorites(username, movieId).subscribe(() => {
       this.favoriteMovies = this.favoriteMovies.filter(movie => movie._id !== movieId);
       this.snackBar.open('Movie removed from favorites', 'OK', { duration: 2000 });

@@ -1,9 +1,13 @@
 <nav class="nav-bar">
-    <button mat-raised-button color="primary" routerLink="/movies">Movies</button>
-    <button mat-raised-button color="accent" routerLink="/profile">Profile</button>
-    <button mat-raised-button color="warn" (click)="logoutUser()">Logout</button>
-  </nav>
-  
-  
-  <router-outlet></router-outlet>
-  
+  <div class="logo" routerLink="/movies">🎬 myFlix</div>
+
+  <div class="nav-links" *ngIf="isLoggedIn()">
+    <button mat-button routerLink="/movies" routerLinkActive="active">Movies</button>
+    <button mat-button routerLink="/profile" routerLinkActive="active">Profile</button>
+    <button mat-icon-button (click)="logoutUser()" matTooltip="Logout">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
