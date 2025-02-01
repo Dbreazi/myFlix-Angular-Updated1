@@ -1,7 +1,9 @@
-<h2 class="dialog-title">{{ data.genre.Name }}</h2>
+<div class="dialog-wrapper">
+  <h2 class="dialog-title">{{ data.genre.Name }}</h2>
 
-<div class="dialog-content">
-  <p class="description-text">{{ data.genre.Description }}</p>
+  <div class="dialog-content">
+    <p class="description-text">{{ data.genre.Description }}</p>
+  </div>
+
+  <button mat-raised-button class="dialog-close-btn" mat-dialog-close>Close</button>
 </div>
-
-<button mat-raised-button class="dialog-close-btn" mat-dialog-close>Close</button>
