@@ -23,8 +23,8 @@ mat-card-title {
   text-align: left;
   font-size: 24px;
   font-weight: bold;
-  margin: 0 0 16px 0; /* Consistent spacing below the title */
-  padding: 10px 0;    /* Padding for better vertical alignment */
+  margin: 0 0 16px 0; 
+  padding: 10px 0;    
   color: #333;
 }
 
@@ -37,24 +37,24 @@ mat-form-field {
 
 /* Update Profile Button Styling */
 .update-profile-btn {
-  background-color: #1976d2; /* Matches the navigation bar */
+  background-color: #1976d2; 
   color: white;
   font-weight: bold;
   padding: 12px 24px;
   margin-bottom: 10px;
   border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 100%; /* Keeps button consistent with form fields */
+  width: 100%; 
 }
 
 .update-profile-btn:hover {
-  background-color: #1565c0; /* Slightly darker on hover */
+  background-color: #1565c0; 
   transform: scale(1.03);
 }
 
 /* Delete Account Button Styling */
 .delete-account-btn {
-  background-color: #d24848; /* Lighter red than the default warn button */
+  background-color: #d24848; 
   color: white;
   font-weight: bold;
   padding: 12px 24px;

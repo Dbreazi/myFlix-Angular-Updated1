@@ -1,13 +1,14 @@
 /* General Layout */
 .movie-container {
   display: flex;
-  overflow-x: auto; /* Horizontal scroll */
-  gap: 20px; /* Space between cards */
+  overflow-x: auto; 
+  gap: 20px; 
   padding: 20px;
-  margin: 10px 20px 40px 20px; /* Balanced margins */
+  margin: 10px 20px 40px 20px; 
   justify-content: flex-start;
-  background-color: #f0f2f5; /* Light background for contrast */
-  scroll-snap-type: x mandatory; /* Smooth horizontal scroll */
+  background-color: #f0f2f5; 
+  scroll-snap-type: x mandatory; 
+  margin-top: 50px;
 }
 
 /* Movie Card Design */
@@ -89,10 +90,10 @@ button {
   color: #333;
 
   /* Truncation Styles */
-  white-space: nowrap;       /* Prevents text from wrapping */
-  overflow: hidden;          /* Hides overflowed text */
-  text-overflow: ellipsis;   /* Adds '...' when text is too long */
-  max-width: 200px;          /* Limits width for truncation */
+  white-space: nowrap;       
+  overflow: hidden;          
+  text-overflow: ellipsis;   
+  max-width: 200px;          
 }
 
 /* Favorite Icon */
@@ -129,6 +130,6 @@ mat-icon {
 
   /* Adjust for smaller screens */
   .movie-title h3 {
-    max-width: 160px; /* Slightly narrower for mobile view */
+    max-width: 160px; 
   }
 }

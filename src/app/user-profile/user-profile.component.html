@@ -27,13 +27,13 @@
     
   </mat-card>
 
-  <!-- Favorite Movies Section -->
+  
   <mat-card class="favorite-movies-card">
     <mat-card-title>Favorite Movies</mat-card-title>
     <div class="favorite-movie-container">
       <mat-card *ngFor="let movie of favoriteMovies" class="favorite-movie-card">
         
-        <!-- Trash Icon Positioned on Top-Right -->
+        
         <mat-icon class="trash-icon" (click)="removeFromFavorites(movie._id)">delete</mat-icon>
         
         <img mat-card-image [src]="movie.ImagePath" alt="{{ movie.Title }}" />

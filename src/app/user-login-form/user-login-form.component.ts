@@ -17,7 +17,7 @@ export class UserLoginFormComponent implements OnInit {
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar,
-    private router: Router  // Removed incorrect comma before this line
+    private router: Router  
   ) { }
 
   ngOnInit(): void { }
@@ -33,7 +33,7 @@ export class UserLoginFormComponent implements OnInit {
   
       // Redirect to Movies page before refreshing
       this.router.navigate(['movies']).then(() => {
-        window.location.reload(); // Refresh to update nav visibility
+        window.location.reload(); 
       });
   
       // Close dialog

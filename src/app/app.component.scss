@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -70,12 +70,12 @@ mat-icon {
 
 /* Footer Styling */
 .app-footer {
-  background-color: #1976d2; /* Matches the navbar */
+  background-color: #1976d2; 
   color: white;
   padding: 20px 0;
   font-size: 14px;
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-  margin-top: auto; /* Pushes the footer to the bottom */
+  margin-top: auto; 
   width: 100%;
   text-align: center;
 }
@@ -133,7 +133,7 @@ mat-icon {
 
   &:hover {
     transform: scale(1.2);
-    color: #ffeb3b; /* Yellow on hover */
+    color: #ffeb3b; 
   }
 }
 
@@ -167,7 +167,7 @@ mat-icon {
   }
 
   .footer-section {
-    margin-bottom: 20px;  /* Replacing the problematic 400px margin */
+    margin-bottom: 20px;  
   }
 
   .social-icons a {
