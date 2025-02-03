@@ -1,27 +1,89 @@
-# MyFlixAngularUpdated
+# 📌 MyFlix Angular Client
+
+The **MyFlix Angular Client** is a single-page, responsive movie web application built with Angular. It allows users to browse movies, view detailed information about directors and genres, manage their favorite movies, and update their user profile.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
 
-## Development server
+## 🚀 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- User Registration and Login (with authentication)
+- Display of Movies with Details (title, description, genre, director)
+- Add/Remove Movies from Favorites
+- View Genre and Director Information via Dialogs
+- Profile Management: Update User Info & Delete Account
+- Responsive Design with Angular Material
+- API Integration using HTTP requests
 
-## Code scaffolding
+## 📦 Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 18** (Client-side framework)
+- **Angular Material** (UI Components)
+- **TypeDoc** (Documentation)
+- **TypeScript** (Strongly typed JavaScript)
+- **RxJS** (Reactive programming)
+- **HTML & SCSS** (Styling)
 
-## Build
+## ⚙️ Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/myFlix-Angular.git
+   cd myFlix-Angular
+   ```
 
-## Running unit tests
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. **Run the Development Server:**
+   ```bash
+   ng serve
+   ```
+   Navigate to `http://localhost:4200/`. The app will auto-reload if you make changes.
 
-## Running end-to-end tests
+## 🗂️ API Integration
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This client interacts with the [MyFlix API](https://strobeapp-583fefccfb94.herokuapp.com), which provides RESTful endpoints for:
 
-## Further help
+- **Movies:** Get all movies or fetch details by title
+- **Directors & Genres:** Retrieve specific information
+- **Users:** Registration, login, update, delete, and manage favorites
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📄 Documentation
+
+- **TypeDoc Documentation:**  
+  The project uses TypeDoc for code documentation.  
+  Run the following command to generate the docs:
+  ```bash
+  npx typedoc
+  ```  
+  Documentation will be available in the `docs/` folder.
+
+## 🧪 Running Unit Tests
+
+Run unit tests with:
+```bash
+ng test
+```
+Uses [Karma](https://karma-runner.github.io) as the test runner.
+
+## 🌐 Deployment
+
+To build the project for production:
+```bash
+ng build --prod
+```
+The build artifacts will be stored in the `dist/` directory.
+
+## 🪽 Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/new-feature`
+3. Commit your changes: `git commit -m 'Add new feature'`
+4. Push to the branch: `git push origin feature/new-feature`
+5. Open a pull request
+
+## 📬 Contact
+
+For any questions, feel free to reach out via GitHub Issues or create a pull request with improvements!

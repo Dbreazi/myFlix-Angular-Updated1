@@ -1,3 +1,8 @@
+/**
+ * The root module of the Angular application.
+ * Configures components, imports necessary Angular modules, and sets up routing.
+ */
+
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';  
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,7 +10,7 @@ import { AppComponent } from './app.component';
 import { FetchApiDataService } from './fetch-api-data.service';
 import { RouterModule, Routes } from '@angular/router';
 
-// Angular Material Modules
+// Angular Material Modules for UI components
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -16,7 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Components
+// Custom Components
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
@@ -26,7 +31,13 @@ import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
 import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
 import { MovieDetailsDialogComponent } from './movie-details-dialog/movie-details-dialog.component';
 
-// Define routes
+/**
+ * Application routes for navigation.
+ * - '/welcome' loads the WelcomePageComponent
+ * - '/movies' loads the MovieCardComponent
+ * - '/profile' loads the UserProfileComponent
+ * - Redirects to '/welcome' by default
+ */
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
@@ -51,16 +62,16 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes), // Configures the app routes
     MatInputModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
     MatDialogModule,
     MatSnackBarModule,
-    MatIconModule // ✅ Fixed: Moved inside imports
+    MatIconModule
   ],
-  providers: [FetchApiDataService],  
-  bootstrap: [AppComponent]
+  providers: [FetchApiDataService], // Registers the API service globally
+  bootstrap: [AppComponent] // Bootstraps the root AppComponent
 })
 export class AppModule { }
